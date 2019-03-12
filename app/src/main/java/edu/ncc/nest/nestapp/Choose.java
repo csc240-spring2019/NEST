@@ -21,9 +21,6 @@ public class Choose extends AppCompatActivity {
 
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.forgotPass:
-                //setContentView(R.layout.activity_forgot_password);
-                break;
             case R.id.scheduleBtn:
                 setContentView(R.layout.activity_schedule);
                 break;
