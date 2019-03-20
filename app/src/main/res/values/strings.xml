@@ -26,6 +26,9 @@
     <string name="title_activity_choose">activity_choose</string>
     <string name="title_activity_sign_up">SignUp</string>
 
+    <!-- String for activity_choose -->
+    <string name="make_choice">Choose a NEST Activity:"</string>
+
     <!-- String names for activity_guest_form activity -->
     <string name="email_lbl">Email Address</string>
     <string name="phone_lbl">Phone Number</string>

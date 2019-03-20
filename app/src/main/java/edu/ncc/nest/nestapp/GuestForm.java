@@ -24,7 +24,7 @@ public class GuestForm extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_guest_form);
 
         //creating the database and passing the correct context as the argument
         db = new GuestFormHelper(this);
