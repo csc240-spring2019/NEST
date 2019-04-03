@@ -43,6 +43,7 @@
     <string name="volFirstName_lbl">What is the first name of the volunteer who helped you today?</string>
     <string name="volLastName_lbl">What is the last name of the volunteer who helped you today?</string>
     <string name="submitBtn_lbl">Submit</string>
+    <string name="textview">Inventory Layout Placeholder</string>
     <string-array name="states_array">
         <item>Alabama</item>
         <item>Alaska</item>
