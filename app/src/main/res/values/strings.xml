@@ -1,0 +1,103 @@
+<resources>
+    <string name="app_name">NestApp</string>
+
+    <!-- String names for activity_login activity -->
+    <string name="account_login">Login</string>
+    <string name="user_name">Username</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="sign_in">Sign in</string>
+    <string name="photo">Photo</string>
+    <string name="make_account">Don\'t have an account? Sign up.</string>
+
+    <!-- String names for activity_sign_up activity -->
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="n_number">N00123456</string>
+    <string name="email_address">example@gmail.com</string>
+    <string name="phone_number">5165552345</string>
+    <string name="sign_up">Sign Up For NEST Volunteer!</string>
+    <string name="sign_up_str">Sign up</string>
+    <string name="title_activity_forgot_password">ForgotPassword</string>
+
+    <!-- String names for activity_forgot_password activity -->
+    <string name="forgot_pass">Enter your email address</string>
+    <string name="reset">Send me the link!</string>
+    <string name="title_activity_choose">activity_choose</string>
+    <string name="title_activity_sign_up">SignUp</string>
+
+    <!-- String for activity_choose -->
+    <string name="make_choice">Choose a NEST Activity:"</string>
+
+    <!-- String names for activity_guest_form activity -->
+    <string name="email_lbl">Email Address</string>
+    <string name="phone_lbl">Phone Number</string>
+    <string name="date_lbl">Date</string>
+    <string name="address_lbl">Address</string>
+    <string name="name_lbl">Name</string>
+    <string name="ID_lbl">NCC ID</string>
+    <string name="town_lbl">Town/City</string>
+    <string name="zip_lbl">Zip Code</string>
+    <string name="income_lbl">Household Income</string>
+    <string name="moreInfoQuestion_lbl">Is there anything else you would like us to know at this time?</string>
+    <string name="volFirstName_lbl">What is the first name of the volunteer who helped you today?</string>
+    <string name="volLastName_lbl">What is the last name of the volunteer who helped you today?</string>
+    <string name="submitBtn_lbl">Submit</string>
+    <string name="textview">Inventory Layout Placeholder</string>
+    <string-array name="states_array">
+        <item>Alabama</item>
+        <item>Alaska</item>
+        <item>Arizona</item>
+        <item>Arkansas</item>
+        <item>California</item>
+        <item>Colorado</item>
+        <item>Connecticut</item>
+        <item>Delaware</item>
+        <item>Florida</item>
+        <item>Georgia</item>
+        <item>Hawaii</item>
+        <item>Idaho</item>
+        <item>Illinois</item>
+        <item>Indiana</item>
+        <item>Iowa</item>
+        <item>Kansas</item>
+        <item>Kentucky</item>
+        <item>Louisiana</item>
+        <item>Maine</item>
+        <item>Maryland</item>
+        <item>Massachusetts</item>
+        <item>Michigan</item>
+        <item>Minnesota</item>
+        <item>Mississippi</item>
+        <item>Missouri</item>
+        <item>Montana</item>
+        <item>Nebraska</item>
+        <item>Nevada</item>
+        <item>New Hampshire</item>
+        <item>New Jersey</item>
+        <item>New Mexico</item>
+        <item>New York</item>
+        <item>North Carolina</item>
+        <item>North Dakota</item>
+        <item>Ohio</item>
+        <item>Oklahoma</item>
+        <item>Oregon</item>
+        <item>Pennsylvania</item>
+        <item>Rhode Island</item>
+        <item>South Carolina</item>
+        <item>South Dakota</item>
+        <item>Tennessee</item>
+        <item>Texas</item>
+        <item>Utah</item>
+        <item>Vermont</item>
+        <item>Virginia</item>
+        <item>Washington</item>
+        <item>West Virginia</item>
+        <item>Wisconsin</item>
+        <item>Wyoming</item>
+    </string-array>
+    <string-array name="contact">
+    <item>E-mail</item>
+    <item>Mobile</item>
+    </string-array>
+</resources>
