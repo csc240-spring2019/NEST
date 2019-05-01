@@ -96,4 +96,8 @@
         <item>Wisconsin</item>
         <item>Wyoming</item>
     </string-array>
+    <string-array name="contact">
+        <item>E-mail</item>
+        <item>Mobile</item>
+    </string-array>
 </resources>

@@ -1,5 +1,6 @@
 package edu.ncc.nest.nestapp;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 public class Choose extends AppCompatActivity {
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,11 @@ public class Choose extends AppCompatActivity {
                 break;
             case R.id.guestFormBtn:
                 setContentView(R.layout.activity_guest_form);
+                break;
+            case R.id.volunteerFormBtn:
+                setContentView(R.layout.activity_volunteer_form);
+                intent = new Intent(Choose.this, VolunteerForm.class);
+                startActivity(intent);
                 break;
         }
     }

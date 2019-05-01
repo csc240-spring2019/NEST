@@ -43,6 +43,18 @@
         android:layout_height="71dp"
         android:layout_below="@id/scheduleBtn"
         android:layout_centerHorizontal="true"
-        android:text="GuestForm"
-        android:onClick="onClick"/>
+        android:onClick="onClick"
+        android:text="Guest Form" />
+    <Button
+        android:id="@+id/volunteerFormBtn"
+        android:layout_width="138dp"
+        android:layout_height="71dp"
+        android:layout_below="@+id/guestFormBtn"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="137dp"
+        android:onClick="onClick"
+        android:text="VOLUNTEER FORM" />
 </RelativeLayout>
