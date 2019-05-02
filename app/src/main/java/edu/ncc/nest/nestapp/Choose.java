@@ -1,6 +1,7 @@
 package edu.ncc.nest.nestapp;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -8,6 +9,9 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
 
@@ -18,19 +22,34 @@ public class Choose extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         //this.getWindow().setBackgroundDrawable(null);
     }
 
+    //implements the menu options for the toolbar
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+
+    }
+
+
+
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.scheduleBtn:
-                setContentView(R.layout.activity_schedule);
-                break;
             case R.id.inventoryBtn:
-                setContentView(R.layout.activity_inventory);
+                launchInventory();
+                break;
+            case R.id.scheduleBtn:
+                launchSchedule();
                 break;
             case R.id.guestFormBtn:
-                setContentView(R.layout.activity_guest_form);
+                launchGuestForm();
                 break;
             case R.id.signUpBtn:
                 createAccountDialog();
@@ -53,6 +72,7 @@ public class Choose extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //launch signUp activity
+                launchSignUp();
             }
         });
 
@@ -67,5 +87,38 @@ public class Choose extends AppCompatActivity {
 
         alert.show();
     }
+
+    /**
+     * launchInventory - starts the Inventory activity
+     */
+    public void launchInventory(){
+        Intent intent = new Intent(this, Inventory.class);
+        startActivity(intent);
+    }
+
+    /**
+     * launchSchedule - starts the Schedule activity
+     */
+    public void launchSchedule(){
+        Intent intent = new Intent(this, Schedule.class);
+        startActivity(intent);
+    }
+
+    /**
+     * launchGuestForm - starts the GuestForm activity
+     */
+    public void launchGuestForm(){
+        Intent intent = new Intent(this, GuestForm.class);
+        startActivity(intent);
+    }
+
+    /**
+     * launchSignUp - starts the SignUp activity
+     */
+    public void launchSignUp(){
+        Intent intent = new Intent(this, SignUp.class);
+        startActivity(intent);
+    }
+
 
 }
