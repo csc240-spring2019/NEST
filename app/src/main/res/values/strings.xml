@@ -23,7 +23,7 @@
     <!-- String names for activity_forgot_password activity -->
     <string name="forgot_pass">Enter your email address</string>
     <string name="reset">Send me the link!</string>
-    <string name="title_activity_choose">activity_choose</string>
+    <string name="title_activity_choose">NEST</string>
     <string name="title_activity_sign_up">SignUp</string>
 
     <!-- String for activity_choose -->
