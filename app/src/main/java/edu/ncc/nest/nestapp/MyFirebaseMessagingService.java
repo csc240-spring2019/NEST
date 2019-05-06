@@ -1,4 +1,3 @@
-
 /**
  * Copyright 2016 Google Inc. All Rights Reserved.
  * <p>
@@ -15,38 +14,31 @@
  * limitations under the License.
  */
 
-package services;
+package edu.ncc.nest.nestapp;
 
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
-
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.google.firebase.quickstart.fcm.R;
-
-import androidx.work.OneTimeWorkRequest;
-import androidx.work.WorkManager;
-import edu.ncc.nest.nestapp.MainActivity;
-import edu.ncc.nest.nestapp.R;
+import java.io.IOException;
+import java.net.URL;
+import java.util.Map;
 
 /**
  * NOTE: There can only be one service in each app that receives FCM messages. If multiple
  * are declared in the Manifest then the first one will be chosen.
- *
- * In order to make this Java sample functional, you must remove the following from the Kotlin messaging
- * service in the AndroidManifest.xml:
- *
- * <intent-filter>
- *   <action android:name="com.google.firebase.MESSAGING_EVENT" />
- * </intent-filter>
  */
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
@@ -74,39 +66,19 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // and data payloads are treated as notification messages. The Firebase console always
         // sends notification
         // messages. For more see: https://firebase.google.com/docs/cloud-messaging/concept-options
-        // [END_EXCLUDE]
+        super.onMessageReceived(remoteMessage);
+        RemoteMessage.Notification notification = remoteMessage.getNotification();
+        Map<String, String> data = remoteMessage.getData();
 
-        // TODO(developer): Handle FCM messages here.
-        // Not getting messages here? See why this may be: https://goo.gl/39bRNJ
+        sendNotification(notification, data);
         Log.d(TAG, "From: " + remoteMessage.getFrom());
 
-        // Check if message contains a data payload.
-        if (remoteMessage.getData().size() > 0) {
-            Log.d(TAG, "Message data payload: " + remoteMessage.getData());
-
-            if (/* Check if data needs to be processed by long running job */ true) {
-                // For long-running tasks (10 seconds or more) use WorkManager.
-                scheduleJob();
-            } else {
-                // Handle message within 10 seconds
-                handleNow();
-            }
-
-        }
 
         // Check if message contains a notification payload.
         if (remoteMessage.getNotification() != null) {
             Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
         }
-
-        // Also if you intend on generating your own notifications as a result of a received FCM
-        // message, here is where that should be initiated. See sendNotification method below.
     }
-    // [END receive_message]
-
-
-    // [START on_new_token]
-
     /**
      * Called if InstanceID token is updated. This may occur if the security of
      * the previous token had been compromised. Note that this is called when the InstanceID token
@@ -121,31 +93,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // Instance ID token to your app server.
         sendRegistrationToServer(token);
     }
-    // [END on_new_token]
-
-    /**
-     * Schedule async work using WorkManager.
-     */
-    private void scheduleJob() {
-        // [START dispatch_job]
-        OneTimeWorkRequest work = new OneTimeWorkRequest.Builder(MyWorker.class)
-                .build();
-        WorkManager.getInstance().beginWith(work).enqueue();
-        // [END dispatch_job]
-    }
-
-    /**
-     * Handle time allotted to BroadcastReceivers.
-     */
-    private void handleNow() {
-        Log.d(TAG, "Short lived task is done.");
-    }
 
     /**
      * Persist token to third-party servers.
      *
      * Modify this method to associate the user's FCM InstanceID token with any server-side account
      * maintained by your application.
+     *
+     * To be used when possibly accepting users onto the platform and authenticating users/devices
      *
      * @param token The new token.
      */
@@ -154,38 +109,60 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     }
 
     /**
-     * Create and show a simple notification containing the received FCM message.
+     * Create and show a custom notification containing the received FCM message.
      *
-     * @param messageBody FCM message body received.
+     * @param notification FCM notification payload received.
+     * @param data FCM data payload received.
      */
-    private void sendNotification(String messageBody) {
+    private void sendNotification(RemoteMessage.Notification notification, Map<String, String> data) {
+        Bitmap icon = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
+
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
-                PendingIntent.FLAG_ONE_SHOT);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
 
-        String channelId = getString(R.string.default_notification_channel_id);
-        Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        NotificationCompat.Builder notificationBuilder =
-                new NotificationCompat.Builder(this, channelId)
-                        .setSmallIcon(R.drawable.ic_stat_ic_notification)
-                        .setContentTitle(getString(R.string.fcm_message))
-                        .setContentText(messageBody)
-                        .setAutoCancel(true)
-                        .setSound(defaultSoundUri)
-                        .setContentIntent(pendingIntent);
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, "channel_id")
+                .setContentTitle(notification.getTitle())
+                .setContentText(notification.getBody())
+                .setAutoCancel(true)
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                .setContentIntent(pendingIntent)
+                .setContentInfo(notification.getTitle())
+                .setLargeIcon(icon)
+                .setLights(Color.GREEN, 1000, 300)
+                .setDefaults(Notification.DEFAULT_VIBRATE)
+                .setSmallIcon(R.mipmap.ic_launcher);
 
-        NotificationManager notificationManager =
-                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        try {
+            String picture_url = data.get("picture_url");
+            if (picture_url != null && !"".equals(picture_url)) {
+                URL url = new URL(picture_url);
+                Bitmap bigPicture = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+                notificationBuilder.setStyle(
+                        new NotificationCompat.BigPictureStyle().bigPicture(bigPicture).setSummaryText(notification.getBody())
+                );
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
         // Since android Oreo notification channel is needed.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel(channelId,
-                    "Channel human readable title",
-                    NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationChannel channel = new NotificationChannel(
+                    "channel_id", "channel_name", NotificationManager.IMPORTANCE_DEFAULT
+            );
+            channel.setDescription("channel description");
+            channel.setShowBadge(true);
+            channel.canShowBadge();
+            channel.enableLights(true);
+            channel.setLightColor(Color.RED); //NOTIFICATION LED COLOR
+            channel.enableVibration(true); //Vibrate
+            channel.setVibrationPattern(new long[]{100, 200, 300, 400, 500});
             notificationManager.createNotificationChannel(channel);
         }
 
-        notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+        notificationManager.notify(0, notificationBuilder.build());
     }
 }
