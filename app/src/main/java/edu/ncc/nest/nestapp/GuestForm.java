@@ -1,13 +1,9 @@
 package edu.ncc.nest.nestapp;
 
-import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 
@@ -30,12 +26,12 @@ public class GuestForm extends AppCompatActivity {
         db = new GuestFormHelper(this);
 
         //getting a handle on info from the UI
-        name = (EditText)findViewById(R.id.editText5);
+        name = (EditText)findViewById(R.id.editText6);
         email = (EditText)findViewById(R.id.editText);
         phone = (EditText)findViewById(R.id.editText2);
-        date = (EditText)findViewById(R.id.editText3);
-        address = (EditText)findViewById(R.id.editText4);
-        city = (EditText)findViewById(R.id.editText7);
+        date = (EditText)findViewById(R.id.editText6);
+        address = (EditText)findViewById(R.id.editText6);
+        city = (EditText)findViewById(R.id.editText6);
         zip = (EditText)findViewById(R.id.editText8);
 
     }

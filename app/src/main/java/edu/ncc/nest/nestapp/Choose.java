@@ -52,6 +52,10 @@ public class Choose extends AppCompatActivity implements OnClickListener {
                 intent = new Intent(this, GuestForm.class);
                 startActivity(intent);
                 break;
+            case R.id.volunteerFormBtn:
+                intent = new Intent(this, VolunteerForm.class);
+                startActivity(intent);
+                break;
         }
     }
 

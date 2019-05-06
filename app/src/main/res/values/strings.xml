@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">NestApp</string>
+    <string name="vol_form">Volunteer Form</string>
 
     <!-- String names for activity_login activity -->
     <string name="account_login">Login</string>
@@ -44,6 +45,9 @@
     <string name="volLastName_lbl">What is the last name of the volunteer who helped you today?</string>
     <string name="submitBtn_lbl">Submit</string>
     <string name="textview">Inventory Layout Placeholder</string>
+    <string name="contact_method">Preffered method of contact:</string>
+    <string name="push_notif">Would you like to receive Push Notifications?</string>
+    <string name="yes_to_push">Yes, I would like to receive push notifications.</string>
     <string-array name="states_array">
         <item>Alabama</item>
         <item>Alaska</item>
@@ -98,6 +102,7 @@
     </string-array>
     <string-array name="contact">
         <item>E-mail</item>
-        <item>Mobile</item>
+        <item>Mobile call</item>
+        <item>Text Message</item>
     </string-array>
 </resources>

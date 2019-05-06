@@ -50,4 +50,13 @@
         android:onClick="onClick"
         android:text="Guest Form" />
 
+    <Button
+        android:id="@+id/volunteerFormBtn"
+        android:layout_width="138dp"
+        android:layout_height="71dp"
+        android:layout_below="@id/guestFormBtn"
+        android:layout_centerHorizontal="true"
+        android:onClick="onClick"
+        android:text="Volunteer Form"/>
+
 </RelativeLayout>
