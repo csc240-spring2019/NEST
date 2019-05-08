@@ -38,6 +38,17 @@ public class Choose extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+
+        if(item.getItemId() == R.id.accountManagementBtn){
+            accountManagement();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
 
 
     public void onClick(View v) {
@@ -117,6 +128,14 @@ public class Choose extends AppCompatActivity {
      */
     public void launchSignUp(){
         Intent intent = new Intent(this, SignUp.class);
+        startActivity(intent);
+    }
+
+    /**
+     * accountManagement method - goes to SignIn activity, to manage account preferences
+     */
+    public void accountManagement(){
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 

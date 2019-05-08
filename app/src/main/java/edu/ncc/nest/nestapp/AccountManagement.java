@@ -8,16 +8,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-public class Inventory extends AppCompatActivity {
+public class AccountManagement extends AppCompatActivity {
 
     @Override
-    /**
-     * onCreate method -
-     * loads the 'activity_inventory layout' which has only a TextView as a placeholder for now
-     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inventory);
+        setContentView(R.layout.activity_account_management);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -35,12 +31,9 @@ public class Inventory extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
+
         if(item.getItemId() == R.id.homeBtn){
             home();
-        }
-
-        if(item.getItemId() == R.id.accountManagementBtn){
-            accountManagement();
         }
 
         return super.onOptionsItemSelected(item);
@@ -54,11 +47,4 @@ public class Inventory extends AppCompatActivity {
         startActivity(intent);
     }
 
-    /**
-     * accountManagement method - goes to SignIn activity, to manage account preferences
-     */
-    public void accountManagement(){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
 }

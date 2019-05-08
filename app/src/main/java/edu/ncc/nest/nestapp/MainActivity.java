@@ -38,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
             home();
         }
 
+        if(item.getItemId() == R.id.accountManagementBtn){
+            accountManagement();
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -60,6 +64,14 @@ public class MainActivity extends AppCompatActivity {
      */
     public void home(){
         Intent intent = new Intent(this, Choose.class);
+        startActivity(intent);
+    }
+
+    /**
+     * accountManagement method - goes to SignIn activity, to manage account preferences
+     */
+    public void accountManagement(){
+        Intent intent = new Intent(this, AccountManagement.class);
         startActivity(intent);
     }
 }

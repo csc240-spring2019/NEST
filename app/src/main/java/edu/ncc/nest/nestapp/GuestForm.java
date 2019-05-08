@@ -64,6 +64,10 @@ public class GuestForm extends AppCompatActivity {
             home();
         }
 
+        if(item.getItemId() == R.id.accountManagementBtn){
+            accountManagement();
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -118,6 +122,14 @@ spinner.setAdapter(adapter);
      */
     public void home(){
         Intent intent = new Intent(this, Choose.class);
+        startActivity(intent);
+    }
+
+    /**
+     * accountManagement method - goes to SignIn activity, to manage account preferences
+     */
+    public void accountManagement(){
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 

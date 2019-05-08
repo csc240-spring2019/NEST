@@ -6,4 +6,8 @@
         android:id="@+id/homeBtn"
         app:showAsAction="always"
         android:title="@string/home"/>
+    <item
+        android:id="@+id/accountManagementBtn"
+        app:showAsAction="never"
+        android:title="@string/acct_management"/>
 </menu>
