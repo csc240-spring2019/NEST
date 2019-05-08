@@ -17,8 +17,7 @@ public class GuestForm extends AppCompatActivity {
     EditText name, email, phone, date, address, city, zip;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guest_form);
 
@@ -26,29 +25,28 @@ public class GuestForm extends AppCompatActivity {
         db = new GuestFormHelper(this);
 
         //getting a handle on info from the UI
-        name = (EditText)findViewById(R.id.editText6);
-        email = (EditText)findViewById(R.id.editText);
-        phone = (EditText)findViewById(R.id.editText2);
-        date = (EditText)findViewById(R.id.editText6);
-        address = (EditText)findViewById(R.id.editText6);
-        city = (EditText)findViewById(R.id.editText6);
-        zip = (EditText)findViewById(R.id.editText8);
-
+        name = (EditText) findViewById(R.id.editText);
+        phone = (EditText) findViewById(R.id.editText2);
+        email = (EditText) findViewById(R.id.editText3);
+        address = (EditText) findViewById(R.id.editText5);
+        city = (EditText) findViewById(R.id.editText6);
+        zip = (EditText) findViewById(R.id.editText7);
+        date = (EditText) findViewById(R.id.editText8);
     }
 
 
-    public void onClick(View view){
+    public void onClick(View view) {
 
         //variable used for checks
         boolean ins = false;
 
         //adding the values into the database if submit button is pressed
-        if(view.getId() == R.id.done_button){
+        if (view.getId() == R.id.done_button) {
             ins = db.insertData(name.getText().toString(), email.getText().toString(), phone.getText().toString(), date.getText().toString(), address.getText().toString(), city.getText().toString(), zip.getText().toString());
         }
 
         //notifying the user if the add was successful
-        if(ins){
+        if (ins) {
             Toast.makeText(getApplicationContext(), "User Added", Toast.LENGTH_LONG).show();
         }
 

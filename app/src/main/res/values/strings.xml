@@ -48,6 +48,7 @@
     <string name="contact_method">Preffered method of contact:</string>
     <string name="push_notif">Would you like to receive Push Notifications?</string>
     <string name="yes_to_push">Yes, I would like to receive push notifications.</string>
+    <string name="re_enter">Re-enter Password</string>
     <string-array name="states_array">
         <item>Alabama</item>
         <item>Alaska</item>

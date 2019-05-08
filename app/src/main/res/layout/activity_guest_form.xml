@@ -80,7 +80,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/editText6"
         android:layout_toRightOf="@id/editText6"
-        android:entries="@array/states_array" />
+        android:entries="@array/states_array"
+        android:paddingTop="10dp"/>
 
     <EditText
         android:id="@+id/editText8"
