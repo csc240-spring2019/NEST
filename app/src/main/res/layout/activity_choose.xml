@@ -8,6 +8,10 @@
     tools:context=".Choose">
     <!--android:background="#FFFFFF">-->
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,6 +51,7 @@
         android:layout_height="71dp"
         android:layout_below="@id/scheduleBtn"
         android:layout_centerHorizontal="true"
+
         android:onClick="onClick"
         android:text="Guest Form" />
 
@@ -58,5 +63,20 @@
         android:layout_centerHorizontal="true"
         android:onClick="onClick"
         android:text="Volunteer Form"/>
+        android:text="GuestForm"
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/signUpBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="159dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="27dp"
+        android:onClick="onClick"
+        android:text="Create NEST account" />
+
 
 </RelativeLayout>

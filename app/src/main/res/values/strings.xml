@@ -24,11 +24,14 @@
     <!-- String names for activity_forgot_password activity -->
     <string name="forgot_pass">Enter your email address</string>
     <string name="reset">Send me the link!</string>
-    <string name="title_activity_choose">activity_choose</string>
+    <string name="title_activity_choose">NEST Home</string>
     <string name="title_activity_sign_up">SignUp</string>
 
     <!-- String for activity_choose -->
     <string name="make_choice">Choose a NEST Activity:"</string>
+
+    <!-- String for menu_main -->
+    <string name="home">HOME</string>
 
     <!-- String names for activity_guest_form activity -->
     <string name="email_lbl">Email Address</string>
