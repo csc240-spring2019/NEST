@@ -96,4 +96,5 @@
         <item>Wisconsin</item>
         <item>Wyoming</item>
     </string-array>
+    <string name="title_activity_food_pantry_life">FoodPantryLife</string>
 </resources>
