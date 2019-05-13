@@ -7,10 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".SignUp">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+
     <TextView
         android:id="@+id/sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
         android:text="@string/sign_up"
         android:hint="@string/sign_up"
         android:textSize="25sp"
@@ -24,6 +30,7 @@
         android:id="@+id/sign_up_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
         android:src="@drawable/veg_table"
         android:scaleType="centerCrop"
         />
