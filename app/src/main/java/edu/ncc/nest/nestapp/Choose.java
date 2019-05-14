@@ -62,7 +62,7 @@ public class Choose extends AppCompatActivity {
             case R.id.guestFormBtn:
                 launchGuestForm();
                 break;
-            case R.id.signUpBtn:
+            case R.id.createAcctBtn:
                 createAccountDialog();
                 break;
         }

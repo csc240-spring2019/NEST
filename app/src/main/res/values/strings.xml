@@ -33,6 +33,12 @@
     <string name="home">HOME</string>
     <string name="acct_management">Account Management</string>
 
+    <!-- String for activity_account_management -->
+    <string name="email_switch_text">Receive important updates via email</string>
+    <string name="phone_switch_text">Receive important updates via phone(text messages)</string>
+    <string name="app_switch_text">Receive important updates via notifications through the app</string>
+    <string name="save_changes">SAVE CHANGES</string>
+
     <!-- String names for activity_guest_form activity -->
     <string name="email_lbl">Email Address</string>
     <string name="phone_lbl">Phone Number</string>

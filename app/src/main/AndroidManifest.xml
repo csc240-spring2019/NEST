@@ -9,13 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AccountManagement"></activity>
-        <activity android:name=".GuestForm" />
-        <activity android:name=".Inventory" />
-        <activity android:name=".Schedule" />
+
+        <activity android:name=".GuestForm"
+            android:parentActivityName=".Choose"/>
+        <activity android:name=".Inventory"
+            android:parentActivityName=".Choose"/>
+        <activity android:name=".Schedule"
+            android:parentActivityName=".Choose"/>
         <activity
             android:name=".SignUp"
-            android:label="@string/title_activity_sign_up" />
+            android:label="@string/title_activity_sign_up"
+            android:parentActivityName=".Choose" />
         <activity
             android:name=".Choose"
             android:label="@string/title_activity_choose">
@@ -25,7 +29,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity">
+            android:parentActivityName=edu.ncc.nest.nestapp.Choose
+        </activity>
+        <activity android:name=".AccountManagement">
+            android:parentActivityName=edu.ncc.nest.nestapp.MainActivity
+        </activity>
     </application>
 
 </manifest>

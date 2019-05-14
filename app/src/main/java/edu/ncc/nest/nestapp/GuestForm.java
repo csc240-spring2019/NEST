@@ -2,6 +2,7 @@ package edu.ncc.nest.nestapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -33,6 +34,9 @@ public class GuestForm extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
 
         //creating the database and passing the correct context as the argument
         db = new GuestFormHelper(this);
@@ -123,6 +127,7 @@ spinner.setAdapter(adapter);
     public void home(){
         Intent intent = new Intent(this, Choose.class);
         startActivity(intent);
+        finish();
     }
 
     /**
@@ -131,6 +136,7 @@ spinner.setAdapter(adapter);
     public void accountManagement(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
 }
