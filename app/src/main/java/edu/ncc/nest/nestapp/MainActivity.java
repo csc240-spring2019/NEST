@@ -48,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.signUp:
                 setContentView(R.layout.activity_sign_up);
+                // rigging this
+                Intent intent = new Intent(this, Inventory.class);
+                startActivity(intent);
                 break;
             case R.id.log_in_button:
                 setContentView(R.layout.activity_choose);
