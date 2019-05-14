@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -18,14 +17,14 @@
         android:layout_above="@id/inventoryBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="84dp"
-        android:text="@string/make_choice"
-        android:textSize="30dp"
-        android:textColor="#FFFCFC"
-        android:textStyle="bold"
         android:shadowColor="#000000"
         android:shadowDx="2"
         android:shadowDy="2"
-        android:shadowRadius="1.5"/>
+        android:shadowRadius="1.5"
+        android:text="@string/make_choice"
+        android:textColor="#FFFCFC"
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/inventoryBtn"
@@ -51,7 +50,6 @@
         android:layout_height="71dp"
         android:layout_below="@id/scheduleBtn"
         android:layout_centerHorizontal="true"
-
         android:onClick="onClick"
         android:text="Guest Form" />
 
@@ -62,9 +60,8 @@
         android:layout_below="@id/guestFormBtn"
         android:layout_centerHorizontal="true"
         android:onClick="onClick"
-        android:text="Volunteer Form"/>
-        android:text="GuestForm"
-        android:onClick="onClick"/>
+        android:text="Volunteer Form" />
+
 
     <Button
         android:id="@+id/signUpBtn"

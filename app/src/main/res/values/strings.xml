@@ -52,6 +52,13 @@
     <string name="push_notif">Would you like to receive Push Notifications?</string>
     <string name="yes_to_push">Yes, I would like to receive push notifications.</string>
     <string name="re_enter">Re-enter Password</string>
+    <string name="availability">Availability</string>
+    <string name="weekly_schedule">What times are best for you during the week?</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
     <string-array name="states_array">
         <item>Alabama</item>
         <item>Alaska</item>

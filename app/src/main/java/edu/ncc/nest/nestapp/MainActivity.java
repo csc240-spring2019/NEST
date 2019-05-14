@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     //implements the menu options for the toolbar
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
 
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        if(item.getItemId() == R.id.homeBtn){
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.homeBtn) {
             home();
         }
 
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * home method - goes to the home screen
      */
-    public void home(){
+    public void home() {
         Intent intent = new Intent(this, Choose.class);
         startActivity(intent);
     }
