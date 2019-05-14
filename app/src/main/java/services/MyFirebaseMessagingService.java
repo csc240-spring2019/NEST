@@ -15,6 +15,8 @@
  *
  * I have made a pastebin with documentation you may want to read if you
  * are interested in how this service works.
+ *
+ * https://pastebin.com/CseCcWn1 (Documentation)
  */
 
 package services;

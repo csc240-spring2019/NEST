@@ -16,7 +16,11 @@ import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-
+/*
+All Rest API Functionality is here.
+Currently this only has headers and implementations to send Notifications with Rest API Post
+requests through Firebase service.
+ */
 
 public class RestAPI extends AsyncTask<String, Void, String> {
     /*This should be the Key associated to your Firebase's Project file.
@@ -54,8 +58,6 @@ public boolean checkNetworkConnection(Context context) {
  *
  * May also need to use doInBackground to avoid possible UI freezes.
  *
- *
- * https://pastebin.com/CseCcWn1 (Documentation)
  */
 public static String makeRequest(String id) throws JSONException {
     HttpURLConnection urlConnection;
