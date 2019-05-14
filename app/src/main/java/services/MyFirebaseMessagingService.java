@@ -12,9 +12,13 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * I have made a pastebin with documentation you may want to read if you
+ * are interested in how this service works.
  */
 
-package edu.ncc.nest.nestapp;
+package services;
+
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -26,7 +30,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.media.RingtoneManager;
-import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
@@ -35,6 +38,9 @@ import com.google.firebase.messaging.RemoteMessage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Map;
+
+import edu.ncc.nest.nestapp.MainActivity;
+import edu.ncc.nest.nestapp.R;
 
 /**
  * NOTE: There can only be one service in each app that receives FCM messages. If multiple
@@ -52,7 +58,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     // [START receive_message]
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        // [START_EXCLUDE]
         // There are two types of messages data messages and notification messages. Data messages
         // are handled
         // here in onMessageReceived whether the app is in the foreground or background. Data
