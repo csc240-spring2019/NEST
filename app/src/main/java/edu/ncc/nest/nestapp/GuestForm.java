@@ -58,6 +58,11 @@ public class GuestForm extends AppCompatActivity {
 
     }
 
+    /**
+     *
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         if(item.getItemId() == R.id.homeBtn){
@@ -68,6 +73,10 @@ public class GuestForm extends AppCompatActivity {
     }
 
 
+    /**
+     *
+     * @param view
+     */
     public void onClick(View view){
 
         //variable used for checks
@@ -82,7 +91,6 @@ public class GuestForm extends AppCompatActivity {
         if(ins){
             Toast.makeText(getApplicationContext(), "User Added", Toast.LENGTH_LONG).show();
         }
-
     }
 /** -- Crashes because of the spinner code************
  Spinner spinner = (Spinner) findViewById(R.id.states_spinner);

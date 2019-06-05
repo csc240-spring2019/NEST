@@ -38,7 +38,12 @@ public class Choose extends AppCompatActivity {
 
     }
 
-
+    /**
+     * onClick - Takes in a View object and compares it's ID to the button's
+     *           ID. If it's a match it will call Inventory, Schedule, or
+     *           CreateAccountDialog method.
+     * @param v - the View to check.
+     */
 
     public void onClick(View v) {
         switch (v.getId()) {
