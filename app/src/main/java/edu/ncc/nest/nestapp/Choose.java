@@ -1,6 +1,8 @@
 package edu.ncc.nest.nestapp;
 
+
 import android.content.DialogInterface;
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,14 +15,17 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.view.View.OnClickListener;
 
-public class Choose extends AppCompatActivity {
+public class Choose extends AppCompatActivity implements OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose);
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -30,14 +35,13 @@ public class Choose extends AppCompatActivity {
 
     //implements the menu options for the toolbar
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
 
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
         return true;
 
     }
-
 
 
     public void onClick(View v) {
@@ -51,6 +55,9 @@ public class Choose extends AppCompatActivity {
             case R.id.guestFormBtn:
                 launchGuestForm();
                 break;
+            case R.id.volunteerFormBtn:
+                launchVolForm();
+                break;
             case R.id.signUpBtn:
                 createAccountDialog();
                 break;
@@ -62,7 +69,7 @@ public class Choose extends AppCompatActivity {
      * will be displayed telling the user what creating an account entails, and will ask them if they want to create an account or not.
      * If they select 'Yes' they will be directed to the SignUp activity. If they select 'No' the dialog will close.
      */
-    public void createAccountDialog(){
+    public void createAccountDialog() {
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(Choose.this);
         alertBuilder.setCancelable(false);
         alertBuilder.setMessage("Creating a NEST account will allow you to receive notifications relating to guest, donator, or volunteer " +
@@ -91,7 +98,7 @@ public class Choose extends AppCompatActivity {
     /**
      * launchInventory - starts the Inventory activity
      */
-    public void launchInventory(){
+    public void launchInventory() {
         Intent intent = new Intent(this, Inventory.class);
         startActivity(intent);
     }
@@ -99,7 +106,7 @@ public class Choose extends AppCompatActivity {
     /**
      * launchSchedule - starts the Schedule activity
      */
-    public void launchSchedule(){
+    public void launchSchedule() {
         Intent intent = new Intent(this, Schedule.class);
         startActivity(intent);
     }
@@ -107,7 +114,7 @@ public class Choose extends AppCompatActivity {
     /**
      * launchGuestForm - starts the GuestForm activity
      */
-    public void launchGuestForm(){
+    public void launchGuestForm() {
         Intent intent = new Intent(this, GuestForm.class);
         startActivity(intent);
     }
@@ -115,10 +122,20 @@ public class Choose extends AppCompatActivity {
     /**
      * launchSignUp - starts the SignUp activity
      */
-    public void launchSignUp(){
+    public void launchSignUp() {
         Intent intent = new Intent(this, SignUp.class);
+        startActivity(intent);
+    }
+
+    /**
+     * launchVolForm - starts the Volunteer activity
+     */
+    public void launchVolForm() {
+        Intent intent = new Intent(this, VolunteerForm.class);
         startActivity(intent);
     }
 
 
 }
+
+

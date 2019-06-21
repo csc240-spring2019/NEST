@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     //implements the menu options for the toolbar
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
 
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
@@ -33,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        if(item.getItemId() == R.id.homeBtn){
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.homeBtn) {
             home();
         }
 
@@ -44,13 +45,16 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.forgotPass:
-                //setContentView(R.layout.activity_forgot_password);
+//                intent = new Intent(this, .class);
+//                startActivity(intent);
                 break;
             case R.id.signUp:
-                setContentView(R.layout.activity_sign_up);
+                intent = new Intent(this, SignUp.class);
+                startActivity(intent);
                 break;
             case R.id.log_in_button:
-                setContentView(R.layout.activity_choose);
+                intent = new Intent(this, Choose.class);
+                startActivity(intent);
                 break;
         }
     }
@@ -58,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * home method - goes to the home screen
      */
-    public void home(){
+    public void home() {
         Intent intent = new Intent(this, Choose.class);
         startActivity(intent);
     }
