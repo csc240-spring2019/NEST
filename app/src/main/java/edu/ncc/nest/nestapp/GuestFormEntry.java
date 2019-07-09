@@ -15,15 +15,13 @@ public class GuestFormEntry {
     private String nccID;
 
 
-    public GuestFormEntry()
-    {
+    public GuestFormEntry() {
     }
 
 
     // parameterized constructor
     public GuestFormEntry(String name, String email, String phone, String date, String address, String city, String zipcode,
-                          String state, String additionalInfo, String nameOfVolunteer, String nccID)
-    {
+                          String state, String additionalInfo, String nameOfVolunteer, String nccID) {
         this.name = name;
         this.email = email;
         this.phone = phone;
@@ -69,6 +67,7 @@ public class GuestFormEntry {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
     public String getNccID() {
         return nccID;
     }
@@ -140,15 +139,14 @@ public class GuestFormEntry {
         this.date = date;
     }
 
-    public boolean equals(Object otherEntry)
-    {
-        return this.id == ((GuestFormEntry)otherEntry).id;
+    public boolean equals(Object otherEntry) {
+        return this.id == ((GuestFormEntry) otherEntry).id;
     }
 
     // Will be used by the ArrayAdapter in the ListView
     @Override
     public String toString() {
-        return id + ": " + name + " - " + email + " - " + phone+ " - " + date+ " - " + address+ " - " + city+ " - " + zipcode+ " - " + state + " - " + additionalInfo + " - "
+        return id + ": " + name + " - " + email + " - " + phone + " - " + date + " - " + address + " - " + city + " - " + zipcode + " - " + state + " - " + additionalInfo + " - "
                 + nameOfVolunteer + " - " + nccID;
     }
 }
