@@ -1,129 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<RelativeLayout tools:context=".GuestForm"
-    android:layout_height="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="match_parent"
+    tools:context=".GuestForm">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
 
     <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:fontFamily="casual"
         android:id="@+id/title_txt"
-        android:text="@string/app_name"/>
-
-    <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/editText5"
-        android:hint="@string/email_lbl"
-        android:layout_below="@id/editText4"
-        android:inputType="textEmailAddress"/>
+        android:layout_below="@id/toolbar"
+        android:fontFamily="casual"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textSize="20sp" />
 
     <EditText
-        android:layout_height="45dp"
-        android:layout_width="wrap_content"
-        android:id="@+id/editText2"
-        android:hint="@string/phone_lbl"
-        android:layout_below="@id/editText"
-        android:inputType="phone"/>
-
-    <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/editText3"
-        android:hint="@string/date_lbl"
-        android:layout_below="@id/editText2"
-        android:inputType="date"/>
-
-    <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/editText6"
-        android:hint="@string/address_lbl"
-        android:layout_below="@id/editText5"
-        android:inputType="textPostalAddress"/>
-
-    <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
         android:id="@+id/editText"
-        android:hint="@string/name_lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/title_txt"
-        android:inputType="textPersonName"/>
+        android:hint="@string/name_lbl"
+        android:inputType="textPersonName" />
 
     <EditText
-        android:layout_height="wrap_content"
+        android:id="@+id/editText2"
         android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_below="@id/editText"
+        android:hint="@string/phone_lbl"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText2"
+        android:hint="@string/email_lbl"
+        android:inputType="textEmailAddress" />
+
+    <EditText
         android:id="@+id/editText4"
-        android:hint="@string/ID_lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/editText3"
-        android:inputType="number"/>
+        android:hint="@string/ID_lbl"
+        android:inputType="number" />
+
 
     <EditText
-        android:layout_height="wrap_content"
+        android:id="@+id/editText5"
         android:layout_width="wrap_content"
-        android:id="@+id/editText7"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText4"
+        android:hint="@string/address_lbl"
+        android:inputType="textPostalAddress" />
+
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText5"
         android:hint="@string/town_lbl"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/editText6"
-        android:inputType="textPersonName"/>
-
-    <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/editText8"
         android:hint="@string/zip_lbl"
-        android:layout_below="@id/editText7"
-        android:inputType="number"/>
-
-    <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/editText9"
-        android:hint="@string/income_lbl"
-        android:layout_below="@id/editText8"
-        android:inputType="number"/>
-
-    <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/editText10"
-        android:hint="@string/moreInfoQuestion_lbl"
-        android:layout_below="@id/editText9"
-        android:inputType="textPersonName"/>
-
-    <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/editText11"
-        android:hint="@string/volFirstName_lbl"
-        android:layout_below="@id/editText10"
-        android:inputType="textPersonName"/>
-
-    <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/editText12"
-        android:hint="@string/volLastName_lbl"
-        android:layout_below="@id/editText11"
-        android:inputType="textPersonName"/>
-
-    <Button
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/done_button"
-        android:text="@string/submitBtn_lbl"
-        android:layout_below="@id/editText12"/>
-    <!--android:onClick="onClick"-->
+        android:inputType="number" />
 
     <Spinner
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
         android:id="@+id/states_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/editText6"
-        android:layout_toRightOf="@id/editText7"
-        android:entries="@array/states_array"/>
+        android:layout_toRightOf="@id/editText6"
+        android:entries="@array/states_array"
+        android:paddingTop="10dp" />
+
+    <EditText
+        android:id="@+id/editText8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText7"
+        android:hint="@string/date_lbl"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/editText9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText8"
+        android:hint="@string/income_lbl"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editText10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText9"
+        android:hint="@string/moreInfoQuestion_lbl"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editText11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText10"
+        android:hint="@string/volFirstName_lbl"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editText12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText11"
+        android:hint="@string/volLastName_lbl"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/done_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText12"
+        android:text="@string/submitBtn_lbl" />
+    <!--android:onClick="onClick"-->
 
 </RelativeLayout>

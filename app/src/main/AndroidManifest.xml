@@ -15,18 +15,24 @@
         <activity android:name=".GuestForm"></activity>
         <activity android:name=".Inventory" />
         <activity android:name=".Schedule" />
+        <activity android:name=".VolunteerForm"/>
+        <activity android:name=".availability"/>
         <activity
             android:name=".SignUp"
             android:label="@string/title_activity_sign_up" />
         <activity
             android:name=".Choose"
-            android:label="@string/title_activity_choose" />
-        <activity android:name=".MainActivity">
+            android:label="@string/title_activity_choose">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            </activity>
+        <activity android:name=".MainActivity">
+
         </activity>
         <service
             android:name="services.MyFirebaseMessagingService">

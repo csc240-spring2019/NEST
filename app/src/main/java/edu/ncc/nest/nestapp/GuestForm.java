@@ -1,13 +1,15 @@
 package edu.ncc.nest.nestapp;
 
-import android.app.Activity;
+
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 
@@ -21,38 +23,58 @@ public class GuestForm extends AppCompatActivity {
     EditText name, email, phone, date, address, city, zip;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guest_form);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         //creating the database and passing the correct context as the argument
         db = new GuestFormHelper(this);
 
         //getting a handle on info from the UI
-        name = (EditText)findViewById(R.id.editText5);
-        email = (EditText)findViewById(R.id.editText);
-        phone = (EditText)findViewById(R.id.editText2);
-        date = (EditText)findViewById(R.id.editText3);
-        address = (EditText)findViewById(R.id.editText4);
-        city = (EditText)findViewById(R.id.editText7);
-        zip = (EditText)findViewById(R.id.editText8);
+        name = (EditText) findViewById(R.id.editText);
+        phone = (EditText) findViewById(R.id.editText2);
+        email = (EditText) findViewById(R.id.editText3);
+        address = (EditText) findViewById(R.id.editText5);
+        city = (EditText) findViewById(R.id.editText6);
+        zip = (EditText) findViewById(R.id.editText7);
+        date = (EditText) findViewById(R.id.editText8);
+    }
+
+    //implements the menu options for the toolbar
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.homeBtn) {
+            home();
+        }
 
-    public void onClick(View view){
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    public void onClick(View view) {
 
         //variable used for checks
         boolean ins = false;
 
         //adding the values into the database if submit button is pressed
-        if(view.getId() == R.id.done_button){
+        if (view.getId() == R.id.done_button) {
             ins = db.insertData(name.getText().toString(), email.getText().toString(), phone.getText().toString(), date.getText().toString(), address.getText().toString(), city.getText().toString(), zip.getText().toString());
         }
 
         //notifying the user if the add was successful
-        if(ins){
+        if (ins) {
             Toast.makeText(getApplicationContext(), "User Added", Toast.LENGTH_LONG).show();
         }
 
@@ -84,4 +106,14 @@ spinner.setAdapter(adapter);
 
     Spinner spinner = (Spinner) findViewById(R.id.spinner);
     spinner.setOnItemSelectedListener(this);*/
+
+
+    /**
+     * home method - goes to the home screen
+     */
+    public void home() {
+        Intent intent = new Intent(this, Choose.class);
+        startActivity(intent);
+    }
+
 }
